@@ -1,0 +1,14 @@
+def find_pair(a, sum):
+	for i in range(len(a)-1):
+		for j in range(i+1, len(a)):
+			if a[i]+ a[j] == sum:
+				return i, j
+	return False
+
+if __name__ == '__main__':
+	a = [8, 7, 2, 5, 3, 1]
+	sum = 10
+	print('Pair found at', find_pair(a, sum))
+	
+		#Time complexity O(n^2)
+		#Space complexity O(n^2)	
