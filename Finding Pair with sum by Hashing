@@ -1,0 +1,15 @@
+def find_pair(a, sum):
+	dict ={}
+	a = enumerate(a)
+	for i, e in a:
+		if sum-e in dict:
+			return ' Pair found at ', dict[sum-e], i
+		dict[e] = i
+	
+if __name__ == '__main__':
+	a = [8, 7, 2, 5, 3, 1]
+	sum = 10
+	print(find_pair(a, sum))
+	
+	#Time complexity is O(n)
+	#Space complexity is O(n)
