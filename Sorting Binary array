@@ -1,0 +1,28 @@
+def sort(a):
+	low = 0
+	high = len(a)-1
+	while low < high:
+		if a[low] < a[high]:
+			low += 1
+			high -= 1
+		elif a[low] > a[high]:
+			swap(a, low, high)
+			low += 1
+			high -= 1
+		elif a[low] == 1 and a[high] == 1:
+			high -= 1
+		elif a[low] == 0 and a[high] == 0:
+			low += 1
+	return a
+			
+def swap(a, low, high):
+	temp = a[low]
+	a[low] = a[high]
+	a[high] = temp
+
+if __name__ == '__main__':
+	a = [1, 0, 1, 0, 1, 0, 0, 1]
+	print(sort(a))
+	
+	#Time complexity O(n/2)
+	# Space complexity O(1)
