@@ -1,0 +1,26 @@
+def sort_array(a):
+	low = mid =0
+	high = len(a)-1
+	while mid <= high:
+		if a[mid] == 0:
+			swap(a, mid, low)
+			low += 1
+			mid += 1
+		elif a[mid] == 2:
+			swap(a, mid, high)
+			high -= 1
+		elif a[mid] == 1:
+			mid += 1
+	print(a)
+	
+def swap(a, s, e):
+	temp = a[s]
+	a[s] = a[e]
+	a[e] = temp
+		
+if __name__ == '__main__':
+	a = [2, 1, 2, 2, 1, 0, 0, 2, 0, 1, 1, 0]
+	sort_array(a)
+	
+#Time complexity is O(n)
+#Space complexity is O(1)
